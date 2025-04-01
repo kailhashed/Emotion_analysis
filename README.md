@@ -1,52 +1,50 @@
 # Emotion Analysis Web App
 
-A real-time emotion detection web application that uses deep learning to analyze emotions from webcam input. The application can detect 7 basic emotions: happy, sad, angry, neutral, fear, surprise, and disgust.
-
-## Features
-- Real-time webcam capture
-- Emotion detection using deep learning
-- Web interface for visualization
-- Support for 7 basic emotions
-- Real-time face detection and emotion classification
-- Beautiful and responsive UI
-
-## Project Structure
-```
-emotion_analysis/
-├── app.py              # Flask web application
-├── download_model.py   # Model training script
-├── plot_training.py    # Training visualization script
-├── requirements.txt    # Project dependencies
-├── templates/         # HTML templates
-│   └── index.html     # Main web interface
-├── FER-2013/         # Dataset directory
-│   ├── train/        # Training images
-│   └── test/         # Test images
-└── plots/            # Training visualization plots
-```
-
-## Model Architecture
-The model uses a Convolutional Neural Network (CNN) with the following architecture:
-- Input: 48x48 grayscale images
-- Conv2D (32 filters, 3x3 kernel)
-- MaxPooling2D
-- Conv2D (64 filters, 3x3 kernel)
-- MaxPooling2D
-- Conv2D (64 filters, 3x3 kernel)
-- Flatten
-- Dense (64 units)
-- Dense (7 units, softmax activation)
-
-## Dataset
-The model is trained on the FER2013 dataset, which contains:
-- 28,709 training images
-- 7,178 test images
-- 7 emotion categories
+A real-time emotion detection application using deep learning and computer vision.
 
 ## Model Performance
-- Training Accuracy: [To be added after training]
-- Validation Accuracy: [To be added after training]
-- Test Accuracy: [To be added after training]
+
+The emotion detection model achieves the following performance metrics on the test set:
+- Accuracy: 67.59%
+- Loss: 0.9084
+
+### Training Plots
+
+#### Confusion Matrix
+![Confusion Matrix](plots/confusion_matrix.png)
+
+The confusion matrix shows the model's performance across different emotion categories. The diagonal elements represent the number of correct predictions for each emotion class.
+
+## Features
+
+- Real-time webcam capture
+- Emotion detection for 7 basic emotions:
+  - Angry
+  - Disgust
+  - Fear
+  - Happy
+  - Sad
+  - Surprise
+  - Neutral
+- Web interface with live emotion display
+- Responsive UI
+
+## Project Structure
+
+```
+emotion_analysis/
+├── app.py                 # Flask web application
+├── download_model.py      # Script for model training
+├── plot_training.py      # Script for generating training plots
+├── requirements.txt      # Project dependencies
+├── templates/           # HTML templates
+│   └── index.html      # Main web interface
+├── plots/              # Training plots and visualizations
+│   └── confusion_matrix.png
+└── FER-2013/          # Dataset directory
+    ├── train/         # Training images
+    └── test/          # Test images
+```
 
 ## Setup Instructions
 
@@ -76,20 +74,35 @@ python plot_training.py
 python app.py
 ```
 
-6. Open your browser and navigate to `http://localhost:5000`
+6. Open a web browser and navigate to `http://localhost:5000`
 
 ## Technologies Used
-- Flask (Web Framework)
-- OpenCV (Image Processing)
-- TensorFlow (Deep Learning)
-- HTML5/CSS3/JavaScript (Frontend)
-- scikit-learn (Machine Learning Utilities)
 
-## Screenshots
-[To be added after running the application]
+- Python 3.11
+- TensorFlow
+- OpenCV
+- Flask
+- HTML/CSS
+- NumPy
+- Matplotlib
+- Seaborn
 
-## Training Plots
-[To be added after generating plots]
+## Model Architecture
+
+The emotion detection model uses a Convolutional Neural Network (CNN) with the following architecture:
+- Input layer: 48x48x1 (grayscale images)
+- Multiple convolutional and pooling layers
+- Dense layers with dropout for regularization
+- Output layer: 7 units (one for each emotion)
+
+## Dataset
+
+The model is trained on the FER-2013 dataset, which contains:
+- 28,709 training images
+- 7,178 test images
+- 7 emotion categories
+- 48x48 pixel grayscale images
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details. 
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
