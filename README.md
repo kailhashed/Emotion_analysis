@@ -1,6 +1,6 @@
 # Emotion Analysis Web App
 
-A real-time emotion detection application using deep learning and computer vision.
+A real-time emotion detection web application that uses deep learning to identify seven basic emotions from webcam input.
 
 ## Model Performance
 
@@ -17,17 +17,16 @@ The confusion matrix shows the model's performance across different emotion cate
 
 ## Features
 
-- Real-time webcam capture
-- Emotion detection for 7 basic emotions:
-  - Angry
-  - Disgust
-  - Fear
-  - Happy
-  - Sad
-  - Surprise
-  - Neutral
-- Web interface with live emotion display
-- Responsive UI
+- Real-time webcam capture and processing
+- Emotion detection for seven basic emotions (Happy, Sad, Angry, Fear, Surprise, Disgust, Neutral)
+- Web interface with live video feed
+- Responsive UI with Bootstrap styling
+- Face detection using OpenCV
+- Deep learning model using TensorFlow
+
+## Screenshot
+
+![Emotion Analysis Web App](screenshots/E0D689E0-F0E5-47F3-ABC9-C6D4FFEE6C3D_1_201_a.jpeg)
 
 ## Project Structure
 
